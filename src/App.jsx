@@ -201,14 +201,14 @@ function App() {
   }, [])
 
   useEffect(() => {
-    const hashPage = window.location.hash.replace('#', '').toLowerCase()
+    const hashPage = window.location.hash.replace('/', '').toLowerCase()
     if (pageIds.includes(hashPage)) {
       setActivePage(hashPage)
     }
   }, [])
 
   useEffect(() => {
-    window.history.replaceState(null, '', `#${activePage}`)
+    window.history.replaceState(null, '', `/${activePage}`)
   }, [activePage])
 
   useEffect(() => {
